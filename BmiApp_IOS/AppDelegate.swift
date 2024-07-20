@@ -1,13 +1,14 @@
 //
 //  AppDelegate.swift
-//  BmiApp_IOS
+//  BMI Calculator
 //
-//  Created by Harsh Kumar on 21/07/24.
+//  Created by Angela Yu on 21/08/2019.
+//  Copyright © 2019 Angela Yu. All rights reserved.
 //
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
