@@ -11,7 +11,7 @@ var BMI : BMIMODEL?
 struct CalculatorBrain {
     ///???This will calculate the BMI
     mutating func calculateBMI(height:Float , weight:Float){
-        /////!!! Makew sure that BMI VALUE IS calculated in Floats only , Wrap every unit with Float 
+        /////!!! Make sure that BMI VALUE IS calculated in Floats only , Wrap every unit with Float 
         let bmivalue = Float(weight)/(Float(height)*Float(height))
         if  bmivalue<18.5{
             BMI=BMIMODEL(value:bmivalue,advice:"Eat More Pies!",color:UIColor.blue)

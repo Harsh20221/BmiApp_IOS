@@ -15,8 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    ///This Action is connected to both slders
-    
+    ////???This format will be responsible for no of decimal places of the slider .2f means 2 and .0f means 0 and this kg and m are just units
     @IBAction func HeightSlider(_ sender: UISlider) {
         HeightLabel.text=String(format:"%.2f m ", sender.value)
     }
