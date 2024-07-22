@@ -19,6 +19,7 @@ class ResultViewController: UIViewController {
     
     
     @IBAction func RecalculateButton(_ sender: UIButton) {
+        self.dismiss(animated: true,completion: nil) //? This will dismiss the screen when we click recalculate button and will transport us back to previous screen
     }
     @IBOutlet var BMIResult: UILabel!
  
