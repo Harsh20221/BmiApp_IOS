@@ -8,11 +8,13 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    @IBOutlet var BMIVIEW: UILabel!
     var bmivalue : String?
     override func viewDidLoad() {  // Add all operational code here
         super.viewDidLoad()
-        BMIResult.text=bmivalue
-        // Do any additional setup after loading the view.
+        BMIVIEW.text=bmivalue
+     
+        
     }
     
     

@@ -5,7 +5,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    var BMIVALUE="0.0"
     @IBOutlet var HeightLabel: UILabel!
     @IBOutlet var WeightSlider: UISlider!
     @IBOutlet var WeightLabel: UILabel!
@@ -29,16 +29,22 @@ class ViewController: UIViewController {
         ////*We are Calculating The Bmi Here
         let height = Heightslider.value
         let weight=WeightSlider.value
-        let BMI=weight/pow(2, height)
+        let BMI=weight/(height*height)
+        
+        BMIVALUE=String(format:"%.1f",BMI)
+        print(BMIVALUE)
+        
         self.performSegue(withIdentifier: "goToScreen", sender: self ) //This is segueway initialisation to go to next screen
-        
-        
-        func prepare(for segue: UIStoryboardSegue,sender:Any?){
-            if segue.identifier == "goToResult"{
+    } ///IMP!!!!!!-- MAKE SURE TO CLOSE THIS CALCULATE BUTTON THEN INITIALISE THE  PREPARE method else it will fail
+    
+        ////This prepare method kewwps track of correct segeway when you have multiple sageway from a single main screen
+    ///!!! DO NOT forget to add Override before the prepare sender 
+  override   func prepare(for segue: UIStoryboardSegue,sender:Any?){
+            if segue.identifier == "goToScreen"{
                 let destinationVC = segue
-                    .destination as! ResultViewController
-                destinationVC.bmivalue=String(BMI)
+                    .destination as! ResultViewController 
+                destinationVC.bmivalue=BMIVALUE
             }
         }
     }
-}
+
