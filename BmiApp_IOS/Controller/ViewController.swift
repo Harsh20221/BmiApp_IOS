@@ -5,6 +5,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var calculatorbrain=CalculatorBrain()
     var BMIVALUE="0.0"
     @IBOutlet var HeightLabel: UILabel!
     @IBOutlet var WeightSlider: UISlider!
@@ -29,21 +30,20 @@ class ViewController: UIViewController {
         ////*We are Calculating The Bmi Here
         let height = Heightslider.value
         let weight=WeightSlider.value
-        let BMI=weight/(height*height)
-        
-        BMIVALUE=String(format:"%.1f",BMI)
-        print(BMIVALUE)
+        //? The BMI VALUE is outsourced from the CalculatorBrain File , we send the height and weight to that method here for calculation
+        let NewBMI =   calculatorbrain.calculateBMI(height:height,weight:weight)
         
         self.performSegue(withIdentifier: "goToScreen", sender: self ) //This is segueway initialisation to go to next screen
-    } ///IMP!!!!!!-- MAKE SURE TO CLOSE THIS CALCULATE BUTTON THEN INITIALISE THE  PREPARE method else it will fail
+    } ///IMP!!!!!!-- MAKE SURE TO CLOSE THIS CALCULATE BUTTON in } THEN INITIALISE THE  PREPARE method else it will fail
     
-        ////This prepare method kewwps track of correct segeway when you have multiple sageway from a single main screen
-    ///!!! DO NOT forget to add Override before the prepare sender 
+        ////??This prepare method keeps track of correct segeway when you have multiple sageway from a single main screen
+    ///!!! DO NOT forget to add Override before the prepare sender
   override   func prepare(for segue: UIStoryboardSegue,sender:Any?){
             if segue.identifier == "goToScreen"{
                 let destinationVC = segue
                     .destination as! ResultViewController 
-                destinationVC.bmivalue=BMIVALUE
+                ////? The calculatorbrain.getbmi value correctly formats the bmi value after calculating it
+                destinationVC.bmivalue=calculatorbrain.getBMIValue()
             }
         }
     }
