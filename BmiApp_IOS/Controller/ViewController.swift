@@ -45,7 +45,7 @@ class ViewController: UIViewController {
                 destinationVC.bmivalue=calculatorbrain.getBMIValue()
                 destinationVC.bmicolor=calculatorbrain.getBMICOLOR()
                 destinationVC.bmimessage=calculatorbrain.getBMIMessage()
-                
+                ///!!!You mandatorily need functions to get various data so for every action you need to build functions
             }
         }
     }
