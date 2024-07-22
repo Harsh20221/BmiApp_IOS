@@ -9,11 +9,16 @@ import UIKit
 
 class ResultViewController: UIViewController {
     @IBOutlet var BMIVIEW: UILabel!
-    var bmivalue : String?
+    @IBOutlet var resultlabel: UILabel!
+    var bmivalue : String? ///These are all optional values
+    var bmicolor:UIColor?
+    var bmimessage:String?
     override func viewDidLoad() {  // Add all operational code here
         super.viewDidLoad()
         BMIVIEW.text=bmivalue
-     
+        view.backgroundColor=bmicolor
+        resultlabel.text=bmimessage
+        
         
     }
     
